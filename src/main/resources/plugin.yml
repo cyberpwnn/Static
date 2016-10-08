@@ -1,0 +1,4 @@
+name: Static
+main: org.cyberpwn.statics.Static
+version: ${project.version}
+depend: [Phantom, Votifier, PlaceholderAPI]

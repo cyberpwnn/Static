@@ -21,7 +21,7 @@ public enum Layer2
 	{
 		public double get(Player p)
 		{
-			return Layer1.V.get(p) / Layer1.T.get(p);
+			return Layer1.V.get(p) / (Layer1.T.get(p) / 1000 / 60 / 60 / 24);
 		}
 	},
 	

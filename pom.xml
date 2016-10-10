@@ -107,6 +107,10 @@
 			<id>vote</id>
 			<url>http://repo.howaner.de/</url>
 		</repository>
+		<repository>
+			<id>phantom</id>
+			<url>https://raw.githubusercontent.com/PhantomAPI/Phantom/master/repository/</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>

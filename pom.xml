@@ -108,8 +108,8 @@
 			<url>http://repo.howaner.de/</url>
 		</repository>
 		<repository>
-			<id>phantom</id>
-			<url>https://raw.githubusercontent.com/PhantomAPI/Phantom/master/repository/</url>
+			<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
 	</repositories>
 	<dependencies>

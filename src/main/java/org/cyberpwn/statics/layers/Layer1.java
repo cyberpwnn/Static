@@ -2,6 +2,7 @@ package org.cyberpwn.statics.layers;
 
 import org.bukkit.entity.Player;
 import org.cyberpwn.statics.Static;
+import org.phantomapi.Phantom;
 
 public enum Layer1
 {
@@ -150,6 +151,12 @@ public enum Layer1
 		return Static.instance().getStaticController().get(p).get(toString().replaceAll("_", ".").toLowerCase());
 	}
 	
+	public double getLocal(Player p)
+	{
+		String name = Phantom.getServerName();
+		return Static.instance().getStaticController().get(p).get(name.replaceAll("_", ".").toLowerCase() + "." + toString().replaceAll("_", ".").toLowerCase());
+	}
+	
 	public void add(Player p)
 	{
 		add(p, 1.0);
@@ -163,5 +170,11 @@ public enum Layer1
 	public void add(Player player, double d)
 	{
 		Static.instance().getStaticController().get(player).add(toString().replaceAll("_", ".").toLowerCase(), d);
+		
+		if(Phantom.instance().isBungeecord())
+		{
+			String name = Phantom.getServerName();
+			Static.instance().getStaticController().get(player).add(name.replaceAll("_", ".").toLowerCase() + "." + toString().replaceAll("_", ".").toLowerCase(), d);
+		}
 	}
 }

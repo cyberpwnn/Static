@@ -19,6 +19,7 @@ import org.cyberpwn.statics.layers.Layer1;
 import org.phantomapi.Phantom;
 import org.phantomapi.construct.Controllable;
 import org.phantomapi.construct.Controller;
+import org.phantomapi.construct.ControllerMessage;
 import org.phantomapi.event.PlayerMoveBlockEvent;
 import org.phantomapi.lang.GMap;
 import org.phantomapi.util.M;
@@ -276,6 +277,9 @@ public class StatHandler extends Controller
 	{
 		try
 		{
+			ControllerMessage cm = new ControllerMessage(this);
+			cm.set("e.player", e.getVote().getUsername());
+			sendMessage("SkillVoter", cm);
 			Player p = Phantom.instance().findPlayer(e.getVote().getUsername());
 			
 			if(p != null)
